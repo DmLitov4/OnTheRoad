@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320255961E93F7160076100A /* AllTravelsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320255951E93F7160076100A /* AllTravelsView.xib */; };
+		325320A71E93B0BD00C35ED8 /* TravelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325320A61E93B0BD00C35ED8 /* TravelsTableViewController.swift */; };
+		325320A91E93B36E00C35ED8 /* TravelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325320A81E93B36E00C35ED8 /* TravelsTableViewCell.swift */; };
+		32895F1A1E93D1F40067FCE0 /* TravelModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32895F181E93D1F40067FCE0 /* TravelModel.xcdatamodeld */; };
 		32ADF3291E93960A00623D4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADF3281E93960A00623D4D /* AppDelegate.swift */; };
-		32ADF32B1E93960A00623D4D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADF32A1E93960A00623D4D /* FirstViewController.swift */; };
 		32ADF32D1E93960A00623D4D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADF32C1E93960A00623D4D /* SecondViewController.swift */; };
 		32ADF3301E93960A00623D4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32ADF32E1E93960A00623D4D /* Main.storyboard */; };
 		32ADF3321E93960A00623D4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32ADF3311E93960A00623D4D /* Assets.xcassets */; };
@@ -35,9 +38,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		320255951E93F7160076100A /* AllTravelsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllTravelsView.xib; sourceTree = "<group>"; };
+		325320A61E93B0BD00C35ED8 /* TravelsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelsTableViewController.swift; sourceTree = "<group>"; };
+		325320A81E93B36E00C35ED8 /* TravelsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelsTableViewCell.swift; sourceTree = "<group>"; };
+		32895F191E93D1F40067FCE0 /* TravelModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelModel.xcdatamodel; sourceTree = "<group>"; };
 		32ADF3251E93960A00623D4D /* OnTheRoadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheRoadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32ADF3281E93960A00623D4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		32ADF32A1E93960A00623D4D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		32ADF32C1E93960A00623D4D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		32ADF32F1E93960A00623D4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		32ADF3311E93960A00623D4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,6 +85,7 @@
 		32ADF31C1E93960A00623D4D = {
 			isa = PBXGroup;
 			children = (
+				320255951E93F7160076100A /* AllTravelsView.xib */,
 				32ADF3271E93960A00623D4D /* OnTheRoadApp */,
 				32ADF33E1E93960A00623D4D /* OnTheRoadAppTests */,
 				32ADF3491E93960A00623D4D /* OnTheRoadAppUITests */,
@@ -100,9 +107,11 @@
 			isa = PBXGroup;
 			children = (
 				32ADF3281E93960A00623D4D /* AppDelegate.swift */,
-				32ADF32A1E93960A00623D4D /* FirstViewController.swift */,
+				325320A61E93B0BD00C35ED8 /* TravelsTableViewController.swift */,
+				325320A81E93B36E00C35ED8 /* TravelsTableViewCell.swift */,
 				32ADF32C1E93960A00623D4D /* SecondViewController.swift */,
 				32ADF32E1E93960A00623D4D /* Main.storyboard */,
+				32895F181E93D1F40067FCE0 /* TravelModel.xcdatamodeld */,
 				32ADF3311E93960A00623D4D /* Assets.xcassets */,
 				32ADF3331E93960A00623D4D /* LaunchScreen.storyboard */,
 				32ADF3361E93960A00623D4D /* Info.plist */,
@@ -235,6 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				320255961E93F7160076100A /* AllTravelsView.xib in Resources */,
 				32ADF3351E93960A00623D4D /* LaunchScreen.storyboard in Resources */,
 				32ADF3321E93960A00623D4D /* Assets.xcassets in Resources */,
 				32ADF3301E93960A00623D4D /* Main.storyboard in Resources */,
@@ -263,8 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				32ADF32D1E93960A00623D4D /* SecondViewController.swift in Sources */,
+				325320A91E93B36E00C35ED8 /* TravelsTableViewCell.swift in Sources */,
+				32895F1A1E93D1F40067FCE0 /* TravelModel.xcdatamodeld in Sources */,
+				325320A71E93B0BD00C35ED8 /* TravelsTableViewController.swift in Sources */,
 				32ADF3291E93960A00623D4D /* AppDelegate.swift in Sources */,
-				32ADF32B1E93960A00623D4D /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,10 +427,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OnTheRoadApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lighthouse.OnTheRoadApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -427,10 +441,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OnTheRoadApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Lighthouse.OnTheRoadApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -507,6 +523,7 @@
 				32ADF3511E93960A00623D4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32ADF3521E93960A00623D4D /* Build configuration list for PBXNativeTarget "OnTheRoadAppTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +532,7 @@
 				32ADF3541E93960A00623D4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		32ADF3551E93960A00623D4D /* Build configuration list for PBXNativeTarget "OnTheRoadAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,8 +541,22 @@
 				32ADF3571E93960A00623D4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		32895F181E93D1F40067FCE0 /* TravelModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				32895F191E93D1F40067FCE0 /* TravelModel.xcdatamodel */,
+			);
+			currentVersion = 32895F191E93D1F40067FCE0 /* TravelModel.xcdatamodel */;
+			path = TravelModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 32ADF31D1E93960A00623D4D /* Project object */;
 }
