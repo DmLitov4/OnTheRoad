@@ -3,7 +3,7 @@
     <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
     <entity name="Travel" representedClassName="Travel" syncable="YES" codeGenerationType="class">
         <attribute name="countryname" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="enddate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="enddate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="shortdescrip" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>

@@ -41,7 +41,7 @@ class TravelsTableViewController: UITableViewController {
     {
         if indexPath.row == 0 {
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let destination = storyboard.instantiateViewController(withIdentifier: "AllTravels") 
+            let destination = storyboard.instantiateViewController(withIdentifier: "AllTravels")
             navigationController?.pushViewController(destination, animated: true)
             
         }

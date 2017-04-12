@@ -8,9 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		320255961E93F7160076100A /* AllTravelsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 320255951E93F7160076100A /* AllTravelsView.xib */; };
+		324317851E9E3CB9002BF455 /* TravelModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 324317821E9E3CB9002BF455 /* TravelModel.xcdatamodeld */; };
 		325320A71E93B0BD00C35ED8 /* TravelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325320A61E93B0BD00C35ED8 /* TravelsTableViewController.swift */; };
 		325320A91E93B36E00C35ED8 /* TravelsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325320A81E93B36E00C35ED8 /* TravelsTableViewCell.swift */; };
-		32895F1A1E93D1F40067FCE0 /* TravelModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32895F181E93D1F40067FCE0 /* TravelModel.xcdatamodeld */; };
+		3272DAD51E9AB4A5000DB11C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272DAD41E9AB4A5000DB11C /* ListViewController.swift */; };
+		3272DAD71E9ABA84000DB11C /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3272DAD61E9ABA84000DB11C /* ListTableViewCell.swift */; };
 		32ADF3291E93960A00623D4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADF3281E93960A00623D4D /* AppDelegate.swift */; };
 		32ADF32D1E93960A00623D4D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADF32C1E93960A00623D4D /* SecondViewController.swift */; };
 		32ADF3301E93960A00623D4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32ADF32E1E93960A00623D4D /* Main.storyboard */; };
@@ -18,6 +20,7 @@
 		32ADF3351E93960A00623D4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32ADF3331E93960A00623D4D /* LaunchScreen.storyboard */; };
 		32ADF3401E93960A00623D4D /* OnTheRoadAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADF33F1E93960A00623D4D /* OnTheRoadAppTests.swift */; };
 		32ADF34B1E93960A00623D4D /* OnTheRoadAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADF34A1E93960A00623D4D /* OnTheRoadAppUITests.swift */; };
+		32F9CD3F1E9CFDAA008048B2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F9CD3E1E9CFDAA008048B2 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +42,14 @@
 
 /* Begin PBXFileReference section */
 		320255951E93F7160076100A /* AllTravelsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllTravelsView.xib; sourceTree = "<group>"; };
+		324317831E9E3CB9002BF455 /* TravelModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelModel.xcdatamodel; sourceTree = "<group>"; };
+		324317841E9E3CB9002BF455 /* TravelModel2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelModel2.xcdatamodel; sourceTree = "<group>"; };
+		324317861E9E3CCD002BF455 /* TravelModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TravelModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		324317871E9E3F2F002BF455 /* TravelModel 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "TravelModel 3.xcdatamodel"; sourceTree = "<group>"; };
 		325320A61E93B0BD00C35ED8 /* TravelsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelsTableViewController.swift; sourceTree = "<group>"; };
 		325320A81E93B36E00C35ED8 /* TravelsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelsTableViewCell.swift; sourceTree = "<group>"; };
-		32895F191E93D1F40067FCE0 /* TravelModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TravelModel.xcdatamodel; sourceTree = "<group>"; };
+		3272DAD41E9AB4A5000DB11C /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		3272DAD61E9ABA84000DB11C /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		32ADF3251E93960A00623D4D /* OnTheRoadApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnTheRoadApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32ADF3281E93960A00623D4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32ADF32C1E93960A00623D4D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +63,7 @@
 		32ADF3461E93960A00623D4D /* OnTheRoadAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTheRoadAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32ADF34A1E93960A00623D4D /* OnTheRoadAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheRoadAppUITests.swift; sourceTree = "<group>"; };
 		32ADF34C1E93960A00623D4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32F9CD3E1E9CFDAA008048B2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F9CD3F1E9CFDAA008048B2 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +100,7 @@
 				32ADF33E1E93960A00623D4D /* OnTheRoadAppTests */,
 				32ADF3491E93960A00623D4D /* OnTheRoadAppUITests */,
 				32ADF3261E93960A00623D4D /* Products */,
+				32F9CD3D1E9CFDAA008048B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,10 +122,12 @@
 				325320A81E93B36E00C35ED8 /* TravelsTableViewCell.swift */,
 				32ADF32C1E93960A00623D4D /* SecondViewController.swift */,
 				32ADF32E1E93960A00623D4D /* Main.storyboard */,
-				32895F181E93D1F40067FCE0 /* TravelModel.xcdatamodeld */,
+				324317821E9E3CB9002BF455 /* TravelModel.xcdatamodeld */,
+				3272DAD61E9ABA84000DB11C /* ListTableViewCell.swift */,
 				32ADF3311E93960A00623D4D /* Assets.xcassets */,
 				32ADF3331E93960A00623D4D /* LaunchScreen.storyboard */,
 				32ADF3361E93960A00623D4D /* Info.plist */,
+				3272DAD41E9AB4A5000DB11C /* ListViewController.swift */,
 			);
 			path = OnTheRoadApp;
 			sourceTree = "<group>";
@@ -135,6 +148,14 @@
 				32ADF34C1E93960A00623D4D /* Info.plist */,
 			);
 			path = OnTheRoadAppUITests;
+			sourceTree = "<group>";
+		};
+		32F9CD3D1E9CFDAA008048B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32F9CD3E1E9CFDAA008048B2 /* Social.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,9 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3272DAD71E9ABA84000DB11C /* ListTableViewCell.swift in Sources */,
 				32ADF32D1E93960A00623D4D /* SecondViewController.swift in Sources */,
 				325320A91E93B36E00C35ED8 /* TravelsTableViewCell.swift in Sources */,
-				32895F1A1E93D1F40067FCE0 /* TravelModel.xcdatamodeld in Sources */,
+				324317851E9E3CB9002BF455 /* TravelModel.xcdatamodeld in Sources */,
+				3272DAD51E9AB4A5000DB11C /* ListViewController.swift in Sources */,
 				325320A71E93B0BD00C35ED8 /* TravelsTableViewController.swift in Sources */,
 				32ADF3291E93960A00623D4D /* AppDelegate.swift in Sources */,
 			);
@@ -546,12 +569,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		32895F181E93D1F40067FCE0 /* TravelModel.xcdatamodeld */ = {
+		324317821E9E3CB9002BF455 /* TravelModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				32895F191E93D1F40067FCE0 /* TravelModel.xcdatamodel */,
+				324317871E9E3F2F002BF455 /* TravelModel 3.xcdatamodel */,
+				324317861E9E3CCD002BF455 /* TravelModel 2.xcdatamodel */,
+				324317831E9E3CB9002BF455 /* TravelModel.xcdatamodel */,
+				324317841E9E3CB9002BF455 /* TravelModel2.xcdatamodel */,
 			);
-			currentVersion = 32895F191E93D1F40067FCE0 /* TravelModel.xcdatamodel */;
+			currentVersion = 324317871E9E3F2F002BF455 /* TravelModel 3.xcdatamodel */;
 			path = TravelModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
