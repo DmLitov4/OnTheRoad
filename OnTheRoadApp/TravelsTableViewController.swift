@@ -15,8 +15,9 @@ class TravelsTableViewController: UITableViewController {
     var myTypes = [["type":"Travels", "descrip":"Here you can find all of your wonderful travels", "image":"travels"], ["type":"Countries", "descrip":"Choose one of countries...", "image":"countries"]]
     
     override func viewDidLoad() {
+        tableView.tableFooterView = UIView()
         super.viewDidLoad()
-        print("yes")
+        print("loaded")
         let iconImageView = UIImageView(image: UIImage(named: "travel"))
         self.navigationItem.titleView = iconImageView
     }
@@ -57,7 +58,6 @@ class TravelsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TravelsTableViewCell
         let typeObject = myTypes[indexPath.row]
         // Configure the cell...
-
         cell.backgroundImageView.image = UIImage(named: typeObject["image"]!)
         cell.typeLabel.text = typeObject["type"]
         cell.descripLabel.text = typeObject["descrip"]

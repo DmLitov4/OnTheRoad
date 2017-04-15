@@ -18,6 +18,51 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         return formatter
     }()
     
+    @IBAction func addMoreTravel(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        
+        imagePicker.delegate = self
+        
+        self.present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func shareToTwitter(_ sender: Any) {
+        if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter)) {
+            var indexPath: NSIndexPath!
+            
+            var travname = ""
+            var travstart = ""
+            var travend = ""
+            var travdescrip = ""
+            
+            if let button = sender as? UIButton {
+                if let superview = button.superview {
+                    if let cell = superview.superview as? ListTableViewCell {
+                        indexPath = listTableView.indexPath(for: cell) as NSIndexPath!
+                        print(indexPath.row)
+                        travname = travels[indexPath.row].countryname!
+                        //travend = travels[indexPath.row].enddate!
+                        if (travels[indexPath.row].startdate != nil){
+                            travstart = df.string(from: travels[indexPath.row].startdate as! Date)
+                        } else {
+                            travstart = "Date was not found"
+                        }
+                        travdescrip = travels[indexPath.row].shortdescrip!
+                    }
+                }
+            }
+            
+            let socialController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            socialController?.setInitialText("Country: " + travname + "\n" + "Description: " + travdescrip + "\n" + "Start date: " + travstart + "\n" + "(send from OnTheRoad iOS app)")
+            let img = travels[indexPath.row].image!
+            socialController?.add(UIImage(data: img as Data))
+            
+            //socialController.addURL(someNSURLInstance)
+            
+            self.present(socialController!, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func shareToFacebook(_ sender: Any) {
         if(SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook)) {
@@ -35,6 +80,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                         print(indexPath.row)
                         travname = travels[indexPath.row].countryname!
                         //travend = travels[indexPath.row].enddate!
+                        if (travels[indexPath.row].startdate != nil){
+                            travstart = df.string(from: travels[indexPath.row].startdate as! Date)
+                        } else {
+                            travstart = "Date was not found"
+                        }
                         travdescrip = travels[indexPath.row].shortdescrip!
                     }
                 }
@@ -86,6 +136,29 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         return travels.count
     }
     
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("Deleted")
+            let trav = travels[indexPath.row]
+            managedObjectContext.delete(trav)
+            travels.remove(at: indexPath.row)
+            //ToDo: delete from CoreData
+            self.listTableView.deleteRows(at: [indexPath], with: .automatic)
+            //self.listTableView.reloadData()
+            do {
+                try self.managedObjectContext.save()
+                //self.loadData()
+            } catch {
+                print("Could not delete data \(error.localizedDescription)")
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell
         
@@ -95,19 +168,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         cell.travelName.text = travelItem.countryname
-        cell.travelDate.text = travelItem.shortdescrip
+        if (travelItem.startdate != nil){
+            cell.travelDate.text = df.string(from: travelItem.startdate as! Date)
+        }
+        else{
+            cell.travelDate.text = "Date was not found"
+        }
         
       return cell
-    }
-    
-    
-    @IBAction func addAnotherTravel(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        
-        imagePicker.delegate = self
-        
-        self.present(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -139,7 +207,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         inputAlert.addTextField{(textField:UITextField) in
             textField.placeholder = "Short description"
         }
-
         
         inputAlert.addAction(UIAlertAction(title: "Save", style: .default, handler: { (action:UIAlertAction) in
             
