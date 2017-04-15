@@ -119,7 +119,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func loadData(){
         let travelRequest:NSFetchRequest<Travel> = Travel.fetchRequest()
-        do{
+        do {
             travels = try managedObjectContext.fetch(travelRequest)
             self.listTableView.reloadData()
         } catch {
@@ -163,6 +163,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell
         
         let travelItem = travels[indexPath.row]
+        
         if let travelImage = UIImage(data: travelItem.image as! Data){
             cell.travelImage.image = travelImage
         }
@@ -175,7 +176,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.travelDate.text = "Date was not found"
         }
         
-      return cell
+        return cell
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -191,10 +192,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func createTravelItem(with image: UIImage){
-        let travelItem = Travel(context: managedObjectContext)
-        travelItem.image = NSData(data: UIImageJPEGRepresentation(image, 0.3)!)
+        let travelimage = NSData(data: UIImageJPEGRepresentation(image, 0.3)!)
+        let destination = storyboard?.instantiateViewController(withIdentifier: "AddNewTravel") as! AddTravelViewController
+        destination.imagePassed = travelimage
+        destination.managedobject = managedObjectContext
         
-        let inputAlert = UIAlertController(title: "New travel", message: "Enter country, small description and dates", preferredStyle: .alert)
+        navigationController?.pushViewController(destination, animated: true)
+
+        /*let inputAlert = UIAlertController(title: "New travel", message: "Enter country, small description and dates", preferredStyle: .alert)
         inputAlert.addTextField{(textField:UITextField) in
             textField.placeholder = "Country"
         }
@@ -240,6 +245,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         inputAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(inputAlert, animated: true, completion: nil)
+        */
     }
     
 }

@@ -88,7 +88,7 @@
         <!--List View Controller-->
         <scene sceneID="faS-lg-ZnY">
             <objects>
-                <viewController storyboardIdentifier="AllTravels" id="6Ag-Zb-dpz" customClass="ListViewController" customModule="OnTheRoadApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllTravels" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6Ag-Zb-dpz" customClass="ListViewController" customModule="OnTheRoadApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tuf-U0-fdI"/>
                         <viewControllerLayoutGuide type="bottom" id="15f-fY-Ejt"/>
@@ -213,10 +213,10 @@
             </objects>
             <point key="canvasLocation" x="3568.8000000000002" y="-380.05997001499253"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Travel View Controller-->
         <scene sceneID="aUz-EJ-OIP">
             <objects>
-                <viewController id="48H-83-vcG" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddNewTravel" useStoryboardIdentifierAsRestorationIdentifier="YES" id="48H-83-vcG" customClass="AddTravelViewController" customModule="OnTheRoadApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ySp-u7-4My"/>
                         <viewControllerLayoutGuide type="bottom" id="AWt-0r-SGH"/>
@@ -240,20 +240,20 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter your description here..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nru-f0-NQb">
-                                <rect key="frame" x="56" y="500" width="263" height="147"/>
+                                <rect key="frame" x="56" y="479" width="263" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pRp-U3-U6R">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pRp-U3-U6R">
                                 <rect key="frame" x="0.0" y="189" width="375" height="130"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="513967311.13975799">
                                     <!--2017-04-15 16:41:51 +0000-->
                                 </date>
                             </datePicker>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ftH-84-U1b">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ftH-84-U1b">
                                 <rect key="frame" x="0.0" y="340" width="375" height="102"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="513967348.015513">
@@ -288,9 +288,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUe-O1-2dt">
+                                <rect key="frame" x="164" y="570" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveTravel:" destination="48H-83-vcG" eventType="touchUpInside" id="Hqa-C9-Wr2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="countryname" destination="jsM-Pl-0Uj" id="0ag-FU-Z3O"/>
+                        <outlet property="descrip" destination="nru-f0-NQb" id="Ory-5u-HOe"/>
+                        <outlet property="enddate" destination="ftH-84-U1b" id="QLh-lD-3Ss"/>
+                        <outlet property="startdate" destination="pRp-U3-U6R" id="BlD-pJ-RNo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9e-Ut-cOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
