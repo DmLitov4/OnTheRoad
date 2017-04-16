@@ -175,7 +175,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         else{
             cell.travelDate.text = "Date was not found"
         }
-        
         return cell
     }
     
