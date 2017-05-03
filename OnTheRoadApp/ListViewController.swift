@@ -159,11 +159,27 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destination = storyboard?.instantiateViewController(withIdentifier: "Detailss") as! PlaceDetailsController
+        destination.imagePassed = travels[indexPath.row].image!
+        destination.labelname = travels[indexPath.row].countryname!
+        if (travels[indexPath.row].shortdescrip != ""){
+        destination.desctext = travels[indexPath.row].shortdescrip!
+        }
+        else
+        {
+            destination.desctext = "No description for this travel"
+        }
+        navigationController?.pushViewController(destination, animated: true)
+
+    }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath) as! ListTableViewCell
         
         let travelItem = travels[indexPath.row]
-        
+
         if let travelImage = UIImage(data: travelItem.image as! Data){
             cell.travelImage.image = travelImage
         }
