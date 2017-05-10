@@ -8,9 +8,31 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
-class AddTravelViewController: UIViewController {
+extension LocalNotification
+{
+    enum Identifier: String
+    {
+        case single, repeated, withActions
+    }
+    
+    enum Action: String
+    {
+        case open, dismiss
+    }
+    
+    enum Category: String
+    {
+        case general
+    }
+}
 
+class AddTravelViewController: UIViewController, LocalNotificationCenterDelegate
+{
+    //local notification center
+    let center = UNUserNotificationCenter.current()
+    
     var imagePassed = NSData()
     var managedobject = NSManagedObjectContext()
     
@@ -25,7 +47,8 @@ class AddTravelViewController: UIViewController {
     @IBOutlet weak var enddate: UIDatePicker!
     @IBOutlet weak var descrip: UITextView!
     
-    @IBAction func saveTravel(_ sender: Any) {
+    @IBAction func saveTravel(_ sender: Any)
+    {
         let country = self.countryname.text
         let descript = self.descrip.text
         let start = startdate.date
@@ -44,15 +67,27 @@ class AddTravelViewController: UIViewController {
         } catch {
             print("Could not save data \(error.localizedDescription)")
         }
+        
+        let notification = LocalNotification(withIdentifier: LocalNotification.Identifier.single,
+                                             deliverTo: center)
+        
+        notification.content.title = "Country notification"
+        notification.content.body = "Country " + country! + " was insert into the List of Countries"
+        notification.content.badge = NSNumber(value: UIApplication.shared.applicationIconBadgeNumber + 1)
+        notification.content.sound = UNNotificationSound.default()
+        
+        notification.schedule(in: 3, repeats: false)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        center.getNotificationSettings(completionHandler: check(allowedNotificationSettings:))
+        center.delegate = self
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool)
+    {
         super.viewDidLoad()
         
         let alertController = UIAlertController(title: "Disclaimer", message:
@@ -60,7 +95,6 @@ class AddTravelViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Accept", style: UIAlertActionStyle.default,handler: nil))
         
         self.present(alertController, animated: true, completion: nil)
-
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,15 +102,66 @@ class AddTravelViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func check(allowedNotificationSettings settings: UNNotificationSettings)
+    {
+        switch settings.authorizationStatus
+        {
+        case .notDetermined:
+            center.requestAuthorization(options: [.alert, .sound, .badge], completionHandler: authorisationResponse(granted:error:))
+        case .denied:
+            let alert = UIAlertController(title: "Error", message: "Please Enable Local Notifications", preferredStyle: .alert)
+            present(alert, animated: true, completion: nil)
+        case .authorized:
+            break
+        }
     }
-    */
+    
+    func authorisationResponse(granted: Bool, error: Error?)
+    {
+        guard !granted else { return }
+        
+        let alert: UIAlertController
+        
+        if let error = error
+        {
+            alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        }
+        else
+        {
+            alert = UIAlertController(title: "Error", message: "Please Enable Local Notifications", preferredStyle: .alert)
+        }
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 
+    // MARK: LocalNotificationCenterDelegate
+    func userNotificationCenter(_ center: UNUserNotificationCenter, failedToSheduleNotificationForIdentifier identifier: String, withError error: Error)
+    {
+        fatalError(error.localizedDescription)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void)
+    {
+        if let action = LocalNotification.Action(rawValue: response.actionIdentifier)
+        {
+            switch action
+            {
+            case .open:
+                let alert = UIAlertController(title: "Notification", message: "Action has opened the app!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                present(alert, animated: true, completion: nil)
+            case .dismiss:
+                print("Action Dismiss")
+            }
+        }
+        
+        completionHandler()
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        // this happens only in foreground
+        completionHandler( [.alert, .sound, .badge] )
+    }
 }
