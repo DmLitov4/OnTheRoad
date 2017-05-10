@@ -24,6 +24,7 @@
 		32F519961EB8975A00258729 /* PlaceDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F519951EB8975A00258729 /* PlaceDetailsController.swift */; };
 		32F9CD3F1E9CFDAA008048B2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F9CD3E1E9CFDAA008048B2 /* Social.framework */; };
 		FB505A9E1EC3328100D4BB3E /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB505A9D1EC3328100D4BB3E /* LocalNotification.swift */; };
+		FBF188951EC37A1100CFEB33 /* LocalNotificationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF188941EC37A1100CFEB33 /* LocalNotificationEnum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		32F519951EB8975A00258729 /* PlaceDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsController.swift; sourceTree = "<group>"; };
 		32F9CD3E1E9CFDAA008048B2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		FB505A9D1EC3328100D4BB3E /* LocalNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
+		FBF188941EC37A1100CFEB33 /* LocalNotificationEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				32ADF3281E93960A00623D4D /* AppDelegate.swift */,
+				FBF188941EC37A1100CFEB33 /* LocalNotificationEnum.swift */,
 				325320A61E93B0BD00C35ED8 /* TravelsTableViewController.swift */,
 				325320A81E93B36E00C35ED8 /* TravelsTableViewCell.swift */,
 				32ADF32C1E93960A00623D4D /* SecondViewController.swift */,
@@ -307,6 +310,7 @@
 				325320A91E93B36E00C35ED8 /* TravelsTableViewCell.swift in Sources */,
 				324317851E9E3CB9002BF455 /* TravelModel.xcdatamodeld in Sources */,
 				3272DAD51E9AB4A5000DB11C /* ListViewController.swift in Sources */,
+				FBF188951EC37A1100CFEB33 /* LocalNotificationEnum.swift in Sources */,
 				32F519961EB8975A00258729 /* PlaceDetailsController.swift in Sources */,
 				325320A71E93B0BD00C35ED8 /* TravelsTableViewController.swift in Sources */,
 				320ECDAD1EA29272008B6167 /* AddTravelViewController.swift in Sources */,
