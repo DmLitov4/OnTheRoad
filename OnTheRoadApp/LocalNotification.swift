@@ -13,8 +13,7 @@ import CoreLocation
 import UserNotifications
 import UserNotificationsUI
 
-protocol LocalNotificationCenterDelegate: UNUserNotificationCenterDelegate
-{
+protocol LocalNotificationCenterDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, failedToSheduleNotificationForIdentifier identifier: String, withError error: Error)
 }
 
@@ -44,19 +43,9 @@ class LocalNotification
         send()
     }
     
-    func schedule(forLocation location: CLLocation, inRadius radius: Double, repeats: Bool)
-    {
-        let region = CLCircularRegion(center: location.coordinate, radius: radius, identifier: identifier + "TriggerLocation")
-        region.notifyOnEntry = true
-        region.notifyOnExit = false
-        
-        trigger = UNLocationNotificationTrigger(region: region, repeats: repeats)
-        send()
-    }
-    
     private func send()
     {
-        let request = UNNotificationRequest(identifier:identifier, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
         center.add(request)
         {

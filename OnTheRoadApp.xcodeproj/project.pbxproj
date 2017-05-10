@@ -23,6 +23,7 @@
 		32ADF34B1E93960A00623D4D /* OnTheRoadAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32ADF34A1E93960A00623D4D /* OnTheRoadAppUITests.swift */; };
 		32F519961EB8975A00258729 /* PlaceDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F519951EB8975A00258729 /* PlaceDetailsController.swift */; };
 		32F9CD3F1E9CFDAA008048B2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F9CD3E1E9CFDAA008048B2 /* Social.framework */; };
+		FB505A9E1EC3328100D4BB3E /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB505A9D1EC3328100D4BB3E /* LocalNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		32ADF34C1E93960A00623D4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32F519951EB8975A00258729 /* PlaceDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceDetailsController.swift; sourceTree = "<group>"; };
 		32F9CD3E1E9CFDAA008048B2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		FB505A9D1EC3328100D4BB3E /* LocalNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				32ADF3331E93960A00623D4D /* LaunchScreen.storyboard */,
 				32ADF3361E93960A00623D4D /* Info.plist */,
 				3272DAD41E9AB4A5000DB11C /* ListViewController.swift */,
+				FB505A9D1EC3328100D4BB3E /* LocalNotification.swift */,
 			);
 			path = OnTheRoadApp;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				32F519961EB8975A00258729 /* PlaceDetailsController.swift in Sources */,
 				325320A71E93B0BD00C35ED8 /* TravelsTableViewController.swift in Sources */,
 				320ECDAD1EA29272008B6167 /* AddTravelViewController.swift in Sources */,
+				FB505A9E1EC3328100D4BB3E /* LocalNotification.swift in Sources */,
 				32ADF3291E93960A00623D4D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
