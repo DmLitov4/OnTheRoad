@@ -10,25 +10,28 @@ import UIKit
 import CoreData
 import UserNotifications
 
+//framework for recognition text
+import TesseractOCR
+
 extension LocalNotification
 {
     enum Identifier: String
     {
-        case single, repeated, withActions
+        case single
     }
     
     enum Action: String
     {
         case open, dismiss
     }
-    
-    enum Category: String
-    {
-        case general
-    }
 }
 
-class AddTravelViewController: UIViewController, LocalNotificationCenterDelegate
+class AddTravelViewController: UIViewController,
+    LocalNotificationCenterDelegate,
+    G8TesseractDelegate,
+    UITextFieldDelegate,
+    UIImagePickerControllerDelegate,
+    UINavigationControllerDelegate
 {
     //local notification center
     let center = UNUserNotificationCenter.current()
@@ -84,6 +87,59 @@ class AddTravelViewController: UIViewController, LocalNotificationCenterDelegate
         center.getNotificationSettings(completionHandler: check(allowedNotificationSettings:))
         center.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    //when we taped on the button then will happen a recognize process
+    @IBAction func recognizeFromChoosedImage(_ sender: UIButton)
+    {
+        //hide the keyboard
+        descrip.resignFirstResponder()
+        // UIImagePickerController is a view controller that lets a user pick media from their photo library.
+        let imagePickerController = UIImagePickerController()
+        
+        // Only allow photos to be picked, not taken.
+        imagePickerController.sourceType = .photoLibrary
+        
+        // Make sure ViewController is notified when the user picks an image.
+        imagePickerController.delegate = self
+        
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func progressImageRecognition(for tesseract: G8Tesseract!)
+    {
+        print("Recognition Progress \(tesseract.progress) %")
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
+    {
+        // Dismiss the picker if the user canceled.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        
+        // The info dictionary may contain multiple representations of the image. You want to use the original.
+        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else
+        {
+            fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
+        }
+        
+        if let tesseract = G8Tesseract(language: "eng")
+        {
+            tesseract.delegate = self
+            tesseract.image = selectedImage.g8_blackAndWhite()
+            tesseract.recognize()
+            descrip.text = tesseract.recognizedText
+        }
+        
+        // Dismiss the picker.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func shouldCancelImageRecognitionForTesseract(tesseract: G8Tesseract!) -> Bool {
+        return false; // return true if you need to interrupt tesseract before it finishes
     }
     
     override func viewDidAppear(_ animated: Bool)
