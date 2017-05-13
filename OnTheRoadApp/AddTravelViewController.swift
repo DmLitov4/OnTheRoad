@@ -90,7 +90,7 @@ class AddTravelViewController: UIViewController,
     }
     
     //when we taped on the button then will happen a recognize process
-    @IBAction func recognizeFromChoosedImage(_ sender: UIButton)
+    @IBAction func recognizeFromImage(_ sender: UIButton)
     {
         //hide the keyboard
         descrip.resignFirstResponder()
