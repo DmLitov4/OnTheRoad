@@ -26,6 +26,7 @@
 		35ACB79F3F5F5A2C0E10A7D6 /* Pods_OnTheRoadAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4DDA1457EDD996EEA7848D7 /* Pods_OnTheRoadAppTests.framework */; };
 		3A85558313B6823FF3B40146 /* Pods_OnTheRoadApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37499DF38938F7F46D319410 /* Pods_OnTheRoadApp.framework */; };
 		8CA38E516D3E0A06A48BFA77 /* Pods_OnTheRoadAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40C52E5325305BB65FFF60F6 /* Pods_OnTheRoadAppUITests.framework */; };
+		FB44B2901EC674200069816F /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = FB44B28F1EC6741F0069816F /* tessdata */; };
 		FB505A9E1EC3328100D4BB3E /* LocalNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB505A9D1EC3328100D4BB3E /* LocalNotification.swift */; };
 		FBF188951EC37A1100CFEB33 /* LocalNotificationEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF188941EC37A1100CFEB33 /* LocalNotificationEnum.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		80F865E7722587227F3457CD /* Pods-OnTheRoadAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnTheRoadAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnTheRoadAppUITests/Pods-OnTheRoadAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C3BEB5E72C9BE536618E37F7 /* Pods-OnTheRoadAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnTheRoadAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OnTheRoadAppTests/Pods-OnTheRoadAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E4DDA1457EDD996EEA7848D7 /* Pods_OnTheRoadAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnTheRoadAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB44B28F1EC6741F0069816F /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		FB505A9D1EC3328100D4BB3E /* LocalNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotification.swift; sourceTree = "<group>"; };
 		FBF188941EC37A1100CFEB33 /* LocalNotificationEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationEnum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				FBF188941EC37A1100CFEB33 /* LocalNotificationEnum.swift */,
 				325320A61E93B0BD00C35ED8 /* TravelsTableViewController.swift */,
 				325320A81E93B36E00C35ED8 /* TravelsTableViewCell.swift */,
+				FB44B28F1EC6741F0069816F /* tessdata */,
 				32ADF32C1E93960A00623D4D /* SecondViewController.swift */,
 				32ADF32E1E93960A00623D4D /* Main.storyboard */,
 				32F519951EB8975A00258729 /* PlaceDetailsController.swift */,
@@ -320,6 +323,7 @@
 			files = (
 				320255961E93F7160076100A /* AllTravelsView.xib in Resources */,
 				32ADF3351E93960A00623D4D /* LaunchScreen.storyboard in Resources */,
+				FB44B2901EC674200069816F /* tessdata in Resources */,
 				32ADF3321E93960A00623D4D /* Assets.xcassets in Resources */,
 				32ADF3301E93960A00623D4D /* Main.storyboard in Resources */,
 			);
